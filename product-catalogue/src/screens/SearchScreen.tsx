@@ -1,5 +1,5 @@
 import { SearchBar, ProductCard } from '../components';
-// import { ProductCard } from '../components/ProductCard';
+
 export function SearchScreen() {
     return (
         <div style={{height:"100vh", width:"100vw",

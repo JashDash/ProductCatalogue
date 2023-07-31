@@ -1,13 +1,10 @@
 import * as React from 'react';
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -30,7 +27,7 @@ export function Filters() {
     return (
         <div>
             <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', p: 2 }}
+            sx={{width: '15vw', bgcolor: 'background.paper', p: 2 }}
             component="nav"
             aria-labelledby="nested-list-subheader"
             >
@@ -41,8 +38,8 @@ export function Filters() {
             <Collapse in={openBrandFilter} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <FormGroup sx={{pl: 4}}>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Mango" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="H&M" />
+                        <FormControlLabel control={<Checkbox />} label="Mango" />
+                        <FormControlLabel control={<Checkbox />} label="H&M" />
                     </FormGroup>
                 </List>
             </Collapse>
@@ -54,8 +51,8 @@ export function Filters() {
             <Collapse in={openPriceFilter} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <FormGroup sx={{pl: 4}}>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Under 500" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="1000 to 3000" />
+                        <FormControlLabel control={<Checkbox />} label="Under 500" />
+                        <FormControlLabel control={<Checkbox />} label="1000 to 3000" />
                     </FormGroup>
                 </List>
             </Collapse>
@@ -67,8 +64,11 @@ export function Filters() {
             <Collapse in={openStarsFilter} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <FormGroup sx={{pl: 4}}>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="5 star" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="4 star" />
+                        <FormControlLabel control={<Checkbox />} label="5 star" />
+                        <FormControlLabel control={<Checkbox />} label="4 star" />
+                        <FormControlLabel control={<Checkbox />} label="3 star" />
+                        <FormControlLabel control={<Checkbox />} label="2 star" />
+                        <FormControlLabel control={<Checkbox />} label="1 star" />
                     </FormGroup>
                 </List>
             </Collapse>
