@@ -1,4 +1,4 @@
-export default function SearchScreen() {
+export function SearchScreen() {
     return (
         <div>
             Search Screen

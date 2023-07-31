@@ -1,9 +1,12 @@
-import SearchScreen from './screens/SearchScreen';
+import { ProductCard, SearchBar } from './components';
+import { SearchScreen } from './screens'
 
 function App() {
   return (
     <div className="App">
-        <SearchScreen />
+      <SearchScreen />
+      <SearchBar />
+      <ProductCard />
     </div>
   );
 }
