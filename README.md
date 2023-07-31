@@ -1,1 +1,5 @@
 # ProductCatalogue
+
+---
+## Git Setup Check
+---
