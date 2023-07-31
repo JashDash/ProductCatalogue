@@ -24,8 +24,8 @@ export function SearchBar() {
                     label="Search"
                     sx={{position: 'absolute', 
                     backgroundColor: 'primary.light', 
-                    margin:'10% 50%', 
-                    transform: 'translate(-50%, -50%)', 
+                    margin:'0% 50%', 
+                    transform: 'translate(-50%, 0%)', 
                     borderRadius: '5px',  
                     width: 600 }}
                     InputProps={{

@@ -8,8 +8,10 @@ export function SearchScreen() {
                     backgroundSize: "cover"
                     }}>
             {/* Search Screen */}
+            <div style={{paddingTop: "10%"}}>
             <SearchBar/>
             <ProductCard />
+            </div>
         </div>
     )
 }
