@@ -6,17 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { LatestTrendsItemCard } from './LatestTrendsItemCard';
 import { faker } from '@faker-js/faker';
-  
-const createCars = (num = 5) => {
-    let cars = new Array();
-    for (let i = 0; i < num; i++) {
-        cars.push(faker.vehicle.manufacturer());
-    }
-    return cars;
-};
-
-let fakeCarsSuggestions = createCars(5);
-let fakeCarsTrending = createCars(5);
+import { fakeCarsSuggestions, fakeCarsTrending, fakeCarsSuggestionsDisplay, fakeCarsTrendingDisplay } from "../data/DisplayCarsArray";
 
 export function ProductCard() {
     return (
@@ -31,16 +21,16 @@ export function ProductCard() {
                 Latest Trends
                 </Typography>
                 <div style={{display:'flex', justifyContent: 'space-between', marginTop: 10}}>
-                    {fakeCarsTrending.map((fakeCar,index)=>{
-                        return <LatestTrendsItemCard manufacturer = {fakeCarsTrending[index]}/> 
+                    {fakeCarsTrendingDisplay.map((fakeCar,index)=>{
+                        return <LatestTrendsItemCard manufacturer = {fakeCarsTrendingDisplay[index]}/> 
                     })}
                 </div>
                 <Typography variant="subtitle1" sx={{ marginTop: 2, fontWeight: 'bold' }} color="black" gutterBottom>
                 Popular Suggestions
                 </Typography>
                 <div style={{display:'flex', flexDirection:'column' , justifyContent: 'space-between', marginTop: 10}}>
-                    {fakeCarsTrending.map((fakeCar,index)=>{
-                        return <Typography variant="caption" color="black" gutterBottom>{fakeCarsSuggestions[index]}</Typography> 
+                    {fakeCarsSuggestionsDisplay.map((fakeCar,index)=>{
+                        return <Typography variant="caption" color="black" gutterBottom>{fakeCarsSuggestionsDisplay[index]}</Typography> 
                     })}
                 </div>
             </CardContent>

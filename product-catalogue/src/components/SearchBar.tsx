@@ -2,6 +2,7 @@ import * as React from 'react';
 import SearchIcon from "@mui/icons-material/Search";
 import { InputAdornment, TextField } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { fakeCarsSuggestions, fakeCarsTrending, fakeCarsSuggestionsDisplay, fakeCarsTrendingDisplay } from "../data/DisplayCarsArray";
 const theme = createTheme({
     palette: {
         primary: {
@@ -11,8 +12,20 @@ const theme = createTheme({
   }});
 
 export function SearchBar() {
+    // SEARCH FUNCTION
     const handleTextFieldChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        console.log(event.target.value);
+        const searchTarget = event.target.value;
+        const len = searchTarget.length;
+        console.log('Target: '+searchTarget+' with length: '+len);
+        let result = new Array();
+        for (let i = 0; i < 100; i++) {
+            if(fakeCarsSuggestions[i].substring(0,len) == searchTarget){
+                result.push(fakeCarsSuggestions[i]);
+                console.log(fakeCarsSuggestions[i]);
+            }
+        }
+        console.log('Over');
+
     }
     return (
         <div>
