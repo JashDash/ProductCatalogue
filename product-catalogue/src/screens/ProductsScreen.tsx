@@ -1,25 +1,33 @@
+import * as React from 'react';
 import { SearchBar} from '../components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
 import { Filters } from '../components/Filters';
 import {ProductItemCard} from '../components/ProductItemCard'
+import { fakeCarItemsDisplay } from "../data/DisplayCarsArray";
 export function ProductsScreen() {
     
     return (
-        <div>
+        <div style={{height: '100vh', width: '98vw'}}>
             <div style={{paddingTop: '3%'}}>
+                <div style={{display: 'flex', justifyContent: 'center'}}> 
                 <SearchBar/>
-                <div style={{width: '90vw', marginTop: '5%'}}>
-                    <Typography variant="h4" sx={{marginLeft:'2vw'}} gutterBottom>
+                </div>
+                <div style={{ marginTop: '2%'}}>
+                    <Typography variant="h4" sx={{paddingLeft:'2vw'}} gutterBottom>
                         Search Results
                     </Typography>
-                    <div style={{display: 'flex', flexDirection:'row', width: '100vw'}}>
-                        <div id="filters" style={{width: '15vw'}}>
-                            <Filters/>
+                    <div style={{display: 'flex', flexDirection:'row'}}>
+                        <div id="filters" >
+                                <Filters/>
                         </div>
-                        <div id="productitems" style={{display: 'flex', height:'100vh', marginLeft: '2vw'}}>
-                            <ProductItemCard/>
-                            <ProductItemCard/>
+
+                        <div id="productitems" style={{display: 'flex', flexWrap: 'wrap'}}>
+                            {fakeCarItemsDisplay.map((fakeCar,index)=>{
+                            return <ProductItemCard manufacturer={fakeCarItemsDisplay[index].manufacturer} price={fakeCarItemsDisplay[index].price} rating={fakeCarItemsDisplay[index].rating} numrating={fakeCarItemsDisplay[index].numrating} />
+                            })}
                         </div>
                     </div>
                 </div>

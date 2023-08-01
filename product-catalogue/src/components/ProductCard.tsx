@@ -11,11 +11,8 @@ import { fakeCarsSuggestions, fakeCarsTrending, fakeCarsSuggestionsDisplay, fake
 export function ProductCard() {
     return (
         <div>
-            <Card sx={{ width: 700,
-                position: "absolute", 
-                minWidth: 275,
-                transform: 'translate(-50%, 0%)',
-                marginTop:'80px', marginLeft:'50%', pl:2, pr:2, pt:1, pb:1, borderRadius: 1 }}>
+            <Card sx={{ width: '45vw', marginTop: '2%',
+                minWidth: 275, pl:2, pr:2, pt:1, pb:1, borderRadius: 1 }}>
             <CardContent>
                 <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }} color="black" gutterBottom>
                 Latest Trends
