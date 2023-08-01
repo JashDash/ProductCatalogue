@@ -27,7 +27,7 @@ export function Filters() {
     return (
         <div>
             <List
-            sx={{width: '15vw', bgcolor: 'background.paper', p: 2 }}
+            sx={{width: '230px', bgcolor: 'background.paper', p: 2 }}
             component="nav"
             aria-labelledby="nested-list-subheader"
             >
@@ -43,7 +43,7 @@ export function Filters() {
                     </FormGroup>
                 </List>
             </Collapse>
-            <Divider />
+            <Divider style={{marginTop: '10px'}} />
             <ListItemButton onClick={handleClickPriceFilter}>
                 <ListItemText primary="PRICE RANGE" />
                 {openPriceFilter ? <ExpandLess /> : <ExpandMore />}
@@ -56,7 +56,7 @@ export function Filters() {
                     </FormGroup>
                 </List>
             </Collapse>
-            <Divider />
+            <Divider style={{marginTop: '10px'}}/>
             <ListItemButton onClick={handleClickStarsFilter}>
                 <ListItemText primary="RATING" />
                 {openStarsFilter ? <ExpandLess /> : <ExpandMore />}

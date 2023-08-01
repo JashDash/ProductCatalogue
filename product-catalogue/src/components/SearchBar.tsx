@@ -41,12 +41,9 @@ export function SearchBar() {
                     id="search"
                     type="search"
                     label="Search"
-                    sx={{position: 'absolute', 
+                    sx={{
                     backgroundColor: 'primary.light', 
-                    margin:'0% 50%', 
-                    transform: 'translate(-50%, 0%)', 
-                    borderRadius: '5px',  
-                    width: 600 }}
+                    borderRadius: '5px', width: '40vw'}}
                     InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">

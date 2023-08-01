@@ -8,7 +8,7 @@ interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
 
-export function ProductItemCard() {
+export function ProductItemCard({manufacturer, price, rating, numrating} : {manufacturer: string, price: BigInteger, rating: BigInteger, numrating: BigInteger}) {
     const [isFavColor, setFavColor] = React.useState(true);
     const [isViewProduct, setViewProduct] = React.useState(false);
 
@@ -17,7 +17,7 @@ export function ProductItemCard() {
     };
 
   return (
-    <div style={{height: '300px', width: '200px', marginLeft: 50}}>
+    <div style={{height: '300px', width: '200px', marginLeft: 50,  marginBottom:'40px',}}>
         <button 
         onMouseEnter={() => setViewProduct(true)}
         onMouseLeave={() => setViewProduct(false)} 
@@ -41,17 +41,12 @@ export function ProductItemCard() {
         </div>
         <div style={{padding: 10, textAlign: 'left'}}>
             <Typography variant="body1">
-                V Neck Cotton Tee
+                {manufacturer}
             </Typography>
             <Typography variant="body2">
-                Rs 549
+                Rs. {price} lakh
             </Typography>
-            <RiStarFill/>
-            <RiStarFill/>
-            <RiStarFill/>
-            <RiStarLine/>
-            <RiStarLine/>
-            (219)
+            <RiStarFill/><RiStarFill/><RiStarFill/><RiStarLine/><RiStarLine/>({numrating})
         </div>
         </button>
     </div>
