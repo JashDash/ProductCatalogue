@@ -1,8 +1,9 @@
 import * as React from 'react';
 import SearchIcon from "@mui/icons-material/Search";
-import { InputAdornment, TextField } from "@mui/material";
+import { Button, InputAdornment, TextField } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { fakeCarsSuggestions, fakeCarsTrending, fakeCarsSuggestionsDisplay, fakeCarsTrendingDisplay } from "../data/DisplayCarsArray";
+import { useNavigate } from "react-router-dom";
 const theme = createTheme({
     palette: {
         primary: {
@@ -12,6 +13,7 @@ const theme = createTheme({
   }});
 
 export function SearchBar() {
+    const navigate = useNavigate();
     // SEARCH FUNCTION
     const handleTextFieldChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const searchTarget = event.target.value;
@@ -27,9 +29,13 @@ export function SearchBar() {
         console.log('Over');
 
     }
+    const handleSearchSubmit = () => {
+        navigate('/products');
+    }
     return (
         <div>
                 <ThemeProvider theme={theme}>
+                    <form onSubmit={handleSearchSubmit}>
                 <TextField
                 variant='outlined'
                     id="search"
@@ -44,12 +50,14 @@ export function SearchBar() {
                     InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
-                        <SearchIcon />
+                        <Button onClick={handleSearchSubmit}><SearchIcon /></Button>
                         </InputAdornment>
                     ),
                     }}
                     onChange={handleTextFieldChange}
+                    onSubmit={handleSearchSubmit}
                 />
+                </form>
                 </ThemeProvider>
         </div>
     )
