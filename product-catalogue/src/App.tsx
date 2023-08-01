@@ -5,8 +5,8 @@ import { ProductsScreen } from './screens/ProductsScreen';
 function App() {
   return (
     <div className="App">
-      {/* <SearchScreen /> */}
-      <ProductsScreen/>
+      <SearchScreen />
+      {/* <ProductsScreen/> */}
     </div>
   );
 }
